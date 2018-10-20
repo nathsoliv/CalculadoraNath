@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="293.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifro.Control.ListarCalculosController">
+   <children>
+      <TableView layoutX="28.0" layoutY="64.0" prefHeight="314.0" prefWidth="238.0" style="-fx-background-color: white;">
+        <columns>
+          <TableColumn prefWidth="237.0" />
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="17.0" text="HISTÓRICO" textFill="#807373">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Pane layoutY="-13.0" prefHeight="26.0" prefWidth="293.0" style="-fx-background-color: #e0e0eb;" />
+      <Button layoutX="111.0" layoutY="378.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Excluir" textFill="#406ab9">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
