@@ -6,14 +6,21 @@
 package br.edu.ifro.Control;
 
 import br.edu.ifro.Model.Historico;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -47,6 +54,8 @@ public class calcController implements Initializable {
     private Label lblNumero2;
     @FXML
     private Label lblNumero1;
+    @FXML
+    private Pane btnAbreH;
     
     
     @Override
@@ -98,7 +107,6 @@ public class calcController implements Initializable {
      lblResult.setText(resultado.toString());
     }
     
-        @FXML
     private void Salvar(ActionEvent event) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
         EntityManager em = emf.createEntityManager();
@@ -118,5 +126,21 @@ public class calcController implements Initializable {
         em.getTransaction().commit();
         
     }
+       @FXML
+    private void abrirHist(MouseEvent event) {
+                try{
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/View/ListarCalculos.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(),600,430);
+            Stage stage = new Stage();
+            stage.setTitle("Histórico");
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.show();            
+        }
+        catch(IOException e){
 
 }
+
+}
+    }
